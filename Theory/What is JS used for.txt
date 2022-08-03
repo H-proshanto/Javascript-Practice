@@ -1,0 +1,12 @@
+The role of JS in Web Dev
+* Allows developers to add dynamic & interactive effects to any webpage 
+* Allows Devs to manupulate CSS 
+* Allows Devs to load data from servers
+* Allows Devs to build entire application in a web browser which are called web applications
+
+Banckend Apps
+* Web applications on web servers
+* API that interact with DB & frontend
+
+Frontend Apps
+* When JS is used in browser to serve multiple purposes like dynamic effects...
