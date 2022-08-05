@@ -150,7 +150,7 @@ lines');
 console.log(`String
 multiple 
 lines`);
-*/
+
 
 const age = 19;
 const isOldEnough = age >= 18;
@@ -171,3 +171,22 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
+*/
+const markWeightInKg = 78;
+const johnWeightInKg = 92;
+const markHeightInMeter = 1.69;
+const johnHeightInMeter = 1.95;
+
+const BMIMark = markWeightInKg / markHeightInMeter ** 2;
+const BMIJohn = johnWeightInKg / johnHeightInMeter ** 2;
+
+const markHigherBMI = BMIMark > BMIJohn;
+
+// console.log(markHigherBMI);
+
+if(markHigherBMI) {
+    console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})`);
+}
+else {
+    console.log(`John's BMI (${BMIMark}) is higher than Mark's (${BMIJohn})`);
+}
