@@ -261,7 +261,7 @@ if (favourite === 23) {
 if (favourite !== 23) {
     console.log('Why not 23?');
 }
-*/
+
 const hasDriverLicense = true;
 const hasGoodVision = true;
 console.log(hasDriverLicense && hasGoodVision);
@@ -284,3 +284,51 @@ if(hasDriverLicense && hasGoodVision && !isTired) {
 } else {
     console.log('Someone else should drive...');
 }
+*/
+
+const dolphinsScore = [97, 112, 101];
+const koalasScore = [109, 95, 123];
+let isDolphinsRequiredMinScore = false;
+let isKoalasRequiredMinScore = false;
+
+const averageDolphinsScore = (() => {
+    let sumOfDolphinsScore = 0;
+    for(let i = 0; i < 3; i++) {
+        if(dolphinsScore[i] >= 100) {
+            isDolphinsRequiredMinScore = true;
+        }
+
+        sumOfDolphinsScore += dolphinsScore[i];
+       
+    }
+    console.log(sumOfDolphinsScore);
+    return sumOfDolphinsScore / 3
+})();
+
+const averageKoalasScore = (() => {
+    let sumOfKoalasScore = 0;
+    for(let i = 0; i < 3; i++) {
+        if(koalasScore[i] >= 100) {
+            isKoalasRequiredMinScore = true;
+        }
+        sumOfKoalasScore += koalasScore[i];
+    }
+    console.log(sumOfKoalasScore);
+    return sumOfKoalasScore / 3
+})();
+
+console.log(averageDolphinsScore, averageKoalasScore);
+
+const isDolphinsWinner = averageDolphinsScore > averageKoalasScore;
+const isEqual = averageDolphinsScore === averageKoalasScore;
+
+if(isDolphinsWinner && isDolphinsRequiredMinScore) {
+    console.log('Dolphins are the Winners!!!');
+} else if(!isDolphinsWinner && isKoalasRequiredMinScore) {
+    console.log("Koalas are the Winners!!!");
+} else if(isEqual && isDolphinsRequiredMinScore && isKoalasRequiredMinScore){
+    console.log('Both Team are Winners!!!');
+} else {
+  console.log("No one wins :(");
+}
+
