@@ -373,7 +373,7 @@ if (day === "monday") {
   console.log("Not a valid day");
 }
 
-*/
+
 
 const age = 23;
 age >= 18
@@ -392,3 +392,12 @@ if (age >= 18) {
 console.log(drink2);
 
 console.log(`I like to drink ${age >= 18 ? "Wine" : "Water"}`);
+*/
+
+const bill = 430;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+const finalBill = bill + tip;
+
+console.log(
+  `The bill was ${bill}, the tip was ${tip} and the total value ${finalBill}`
+);
