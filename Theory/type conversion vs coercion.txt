@@ -1,0 +1,3 @@
+Type conversion in JS is when we manually conver the type of a variable
+
+Type coercion in JS is when JS automatically converts the type of the variable for the DEVs

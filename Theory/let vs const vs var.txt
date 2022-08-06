@@ -1,0 +1,8 @@
+*let & const was introduced in ES6
+
+*let & const are hoisted in different context
+*var is hoisted inside global object (window)
+*const are never mutated
+
+- Never use var 
+* Always properly use let / const

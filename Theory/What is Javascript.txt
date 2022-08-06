@@ -1,0 +1,4 @@
+Javascript is A High-Level, Object-Oriented, Multi-Paradigm programming language.
+* High-level -> We don't have to worry about complex low level memory management
+* Object-oriented -> Based on objects, for storing most kinds of data
+* Multi-paradigm -> We can use different styles of programming

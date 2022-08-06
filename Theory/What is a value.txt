@@ -1,0 +1,1 @@
+* value is basically the smallest level of information that we have in JS
