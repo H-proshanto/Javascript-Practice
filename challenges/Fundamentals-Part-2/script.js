@@ -89,7 +89,7 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 3));
-*/
+
 // part 2 - 007
 const calcAge = function(birthYear) {
     return 2037 - birthYear;
@@ -109,3 +109,52 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 
 yearsUntilRetirement(1991, 'Jonas');
 yearsUntilRetirement(1950, 'Mike');
+*/
+
+/*
+using arrays and reduce function
+
+const dolphinsScore = [85, 54, 41];
+const koalasScore = [23, 34, 27];
+
+const calcAverage = (score) => {
+    const sumOfScore = score.reduce((acc, curr) => {
+        acc += curr;
+
+        return acc;
+    }, 0);
+
+    return sumOfScore / 3;
+}
+*/
+
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+const checkWinner = (avgDolphins, avgKoalas) => {
+  if (avgDolphins > avgKoalas * 2) {
+    console.log(`The winners are Dolphins with score of (${avgDolphins} vs ${avgKoalas})`);
+  } else if (avgKoalas > avgDolphins * 2) {
+    console.log(`The winners are Koalas with score of (${avgKoalas} vs ${avgDolphins})`);
+  } else {
+    console.log(`No team wins...`);
+  }
+};
+
+/*
+// First Test Case:
+
+const avgDolphins = calcAverage(44, 23, 71);
+const avgKoalas = calcAverage(65, 54, 49);
+
+console.log(avgDolphins, avgKoalas);
+
+checkWinner(avgDolphins, avgKoalas);
+*/
+
+// Second Test Case :
+const avgDolphins = calcAverage(85, 54, 41);
+const avgKoalas = calcAverage(23, 34, 27);
+
+console.log(avgDolphins, avgKoalas);
+
+checkWinner(avgDolphins, avgKoalas);
