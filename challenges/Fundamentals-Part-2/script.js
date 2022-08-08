@@ -199,7 +199,7 @@ console.log(age1, age2, age3);
 
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[2])];
 console.log(ages);
-*/
+
 
 // Part 2 - 010
 const friends = ["Michael", "Steven", "Peter"];
@@ -230,3 +230,26 @@ console.log(friends.includes('23'));
 if(friends.includes('Steven')) {
     console.log('You have a friend called Steven');
 }
+*/
+
+const calcTip = (bill) => {
+    if(bill >= 50 && bill <= 300) {
+        return bill * 0.15;
+    } else {
+        return bill * 0.20;
+    }
+}
+
+console.log(calcTip(100));
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+//console.log(bills, tips);
+
+const total = [];
+total.push(bills[0] + tips[0]);
+total.push(bills[1] + tips[1]);
+total.push(bills[2] + tips[2]);
+
+console.log(bills, tips, total);
