@@ -343,3 +343,42 @@ console.log(proshanto.getSummery());
 //console.log(typeof []);
 */
 
+// Part 2 - challeng #3
+const mark = {
+  firstName: "Mark",
+  lastName: "Miller",
+  massInKg: 78,
+  heightInMeter: 1.69,
+
+  calcBMI: function () {
+    this.bmi = this.massInKg / this.heightInMeter ** 2;
+    return this.bmi;
+  },
+};
+
+const john = {
+  firstName: "John",
+  lastName: "Smith",
+  massInKg: 92,
+  heightInMeter: 1.95,
+
+  calcBMI: function () {
+    this.bmi = this.massInKg / this.heightInMeter ** 2;
+    return this.bmi;
+  },
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+console.log(mark.bmi, john.bmi);
+
+if (john.bmi > mark.bmi) {
+  console.log(
+    `${john.firstName} ${john.lastName}'s BMI (${john.bmi}) is Higher than ${mark.firstName} ${mark.lastName}'s BMI (${mark.bmi})`
+  );
+} else {
+  console.log(
+    `${mark.firstName} ${mark.lastName}'s BMI (${mark.bmi}) is Higher than ${john.firstName} ${john.lastName}'s BMI (${john.bmi})`
+  );
+}
