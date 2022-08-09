@@ -341,7 +341,7 @@ console.log(proshanto.age);
 // challenge
 console.log(proshanto.getSummery());
 //console.log(typeof []);
-*/
+
 
 // Part 2 - challeng #3
 const mark = {
@@ -381,4 +381,118 @@ if (john.bmi > mark.bmi) {
   console.log(
     `${mark.firstName} ${mark.lastName}'s BMI (${mark.bmi}) is Higher than ${john.firstName} ${john.lastName}'s BMI (${john.bmi})`
   );
+}
+
+
+//part 2 - 016
+console.log("Lifting weighs repitition 1");
+console.log("Lifting weighs repitition 2");
+console.log("Lifting weighs repitition 3");
+console.log("Lifting weighs repitition 4");
+console.log("Lifting weighs repitition 5");
+console.log("Lifting weighs repitition 6");
+console.log("Lifting weighs repitition 7");
+console.log("Lifting weighs repitition 8");
+console.log("Lifting weighs repitition 9");
+console.log("Lifting weighs repitition 10");
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weighs repitition ${rep}`);
+}
+
+
+// Part 2 - 017
+const proshantosArray = [
+  "Proshanto",
+  "Lal",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true
+];
+
+const types = [];
+
+//console.log(proshantosArray[0]);
+//.
+//.
+//console.log(proshantosArray[2]);
+
+for (let i = 0; i < proshantosArray.length; i++) {
+  console.log(proshantosArray[i]);
+
+  types[i] = typeof proshantosArray[i];
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+//continue and break
+console.log('--- ONLY STRINGS ---');
+for (let i = 0; i < proshantosArray.length; i++) {
+  if(typeof proshantosArray[i] !== 'string')continue;
+
+  console.log(proshantosArray[i], typeof proshantosArray[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---');
+for (let i = 0; i < proshantosArray.length; i++) {
+  if(typeof proshantosArray[i] === 'number')break;
+
+  console.log(proshantosArray[i], typeof proshantosArray[i]);
+}
+
+
+// Part 2 - 018
+const proshantosArray = [
+  "Proshanto",
+  "Lal",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true,
+];
+
+for (let i = proshantosArray.length - 1; i >= 0; i--) {
+  console.log(i, proshantosArray[i]);
+}
+
+for(let exercise = 1; exercise < 4; exercise++) {
+  console.log(`------- Starting exercise ${exercise}`);
+
+  for(let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise} Lifting weight repition ${rep}`);
+  }
+
+}
+*/
+
+// Part 2 - 019
+for(let rep = 1; rep < 6; rep++) {
+  console.log(`Lifting weight repition ${rep}`);
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: Lifting weight repition ${rep} `); 
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+//console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if(dice === 6) {
+    console.log(`Loop is about to end...`);
+  }
 }
