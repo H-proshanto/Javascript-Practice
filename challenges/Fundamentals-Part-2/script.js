@@ -230,7 +230,7 @@ console.log(friends.includes('23'));
 if(friends.includes('Steven')) {
     console.log('You have a friend called Steven');
 }
-*/
+
 
 const calcTip = (bill) => {
     if(bill >= 50 && bill <= 300) {
@@ -253,3 +253,93 @@ total.push(bills[1] + tips[1]);
 total.push(bills[2] + tips[2]);
 
 console.log(bills, tips, total);
+
+
+const proshantosArray = [
+    'Proshanto',
+    'Lal',
+    2037 - 1991,
+    'teacher',
+    ['Micheal',  'Peter', 'Steven']
+];
+
+// part 2 - 012,013
+const proshanto = {
+    firstName: 'Proshanto',
+    lastName: 'Lal',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Mahfuz',  'Mou', 'Ovi']
+};
+
+console.log(proshanto);
+
+console.log(proshanto.lastName);
+console.log(proshanto['lastName']);
+
+const nameKey = 'Name';
+console.log(proshanto['first' + nameKey]);
+console.log(proshanto['last' + nameKey]);
+
+//console.log(proshanto.'first' + nameKey);
+
+const interestedIn = prompt('What do you want to know about proshanto? choose between firstName, lastName, age, job and friends');
+console.log(proshanto[interestedIn]);
+
+if(proshanto[interestedIn]) {
+    console.log(proshanto[interestedIn]);
+} else {
+    console.log('Wrong request! choose between firstName, lastName, age, job and friends');
+}
+
+proshanto.location = 'Bangladesh';
+proshanto['twitter'] = '@kproshanto44';
+console.log(proshanto);
+
+// challenge 
+console.log(`${proshanto.firstName} has ${proshanto.friends.length} friends and his best friend is 
+${proshanto.friends[0]}`);
+
+
+// part 2 - 014
+const proshanto = {
+  firstName: "Proshanto",
+  lastName: "Lal",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Mahfuz", "Mou", "Ovi"],
+  hasDriversLicense: true,
+
+  //    calcAge: function (birthYear) {
+  //      return 2037 - birthYear;
+  //    }
+
+  // calcAge: function () {
+  // console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummery: function () {
+    return `${this.firstName} is ${this.calcAge()} years old ${
+        this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} drivers license`;
+  },
+};
+
+console.log(proshanto.calcAge());
+console.log(proshanto.age);
+console.log(proshanto.age);
+console.log(proshanto.age);
+
+//console.log(proshanto['calcAge']());
+
+// challenge
+console.log(proshanto.getSummery());
+//console.log(typeof []);
+*/
+
