@@ -418,7 +418,7 @@ for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
 
-
+//Challenge #2
 
 const game = {
   team1: 'Bayern Munich',
@@ -590,7 +590,7 @@ console.log(...question.entries());
 console.log(...question.keys());
 console.log(...question.values());
 
-
+ //Challenge #3
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -728,7 +728,7 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some food and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
-*/
+
 console.log('a+very+nice+string'.split('+'));
 console.log('Proshanto Lal'.split(' '));
 
@@ -775,3 +775,23 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
+
+// Challenge #4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  //console.log(rows.entries());
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    //console.log(first, second);
+
+    const output = `${first}${second[0].toUpperCase() + second.slice(1)}`;
+    //console.log(output);
+    console.log(output.padEnd(20, ' ').padEnd(20 + i + 1, '✅'));
+  }
+});
