@@ -4,6 +4,21 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -14,20 +29,9 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+
+  // ES6 enhanced object literals
+  openingHours,
 
   orderPasta: function (ing1, ing2, ing3) {
     console.log(
@@ -259,7 +263,7 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
 
-*/
+
 
 // Challenge #1
 
@@ -339,3 +343,77 @@ printGoals(...game.scored);
 //7.
 team1 < team2 && console.log('Team1 will win');
 team2 < team1 && console.log('Team2 will win');
+
+
+//for-of-LOOP
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log(...menu.entries());
+
+
+//Advance Object literals
+//1. {name : name} we don't need to write the variable name if it is same
+// just {name} is enough !
+//2. method can be written inside object like,
+//bark(){                 instead of,   bark: function (){
+//console.log('bark');                          console.log('bark');
+//}                                           }
+//we can compute propery names
+
+//Optional Chaining
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+//if (restaurant.openingHours && restaurant.openingHours.fri)
+//  console.log(restaurant.openingHours.fri.open);
+
+//with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+//days
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist!');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist!');
+
+//Arrays
+const users =  [{name : 'proshanto', email: 'hello@gmail.com'}];
+
+console.log(users[0]?.name ?? 'users array is empty');
+*/
+
+// Looping over objects,object_keys,values
+//properties
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `we are open on ${properties.length} days`;
+
+for (const day of properties) {
+  openStr += `${day}`;
+}
+console.log(openStr);
+
+//value of properties
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entire object
+const entries = Object.entries(openingHours);
+//console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
