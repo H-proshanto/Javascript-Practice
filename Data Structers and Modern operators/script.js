@@ -418,7 +418,7 @@ for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
 
-*/
+
 
 const game = {
   team1: 'Bayern Munich',
@@ -485,3 +485,108 @@ for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers);
+
+
+//Set 
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Proshanto'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+//ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+//example
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+);
+
+
+
+//Map
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze,Italy');
+console.log(rest.set(2, 'Lisbon,Portugal'));
+rest
+  .set('catagories', ['Italian', 'Pizzaria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('catagories'));
+rest.delete(2);
+console.log(rest.size);
+//rest.clear();
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+
+const question = new Map([
+  ['question', 'What is the best programming language'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct :3'],
+  [false, 'Better luck next time'],
+]);
+
+console.log(question);
+console.log(Object.entries(openingHours));
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key} : ${value}`);
+}
+
+const answer = 3;
+//const answer = Number(prompt('Your Answer'));
+console.log(answer);
+
+console.log(
+  question.get('correct') === answer ? question.get(true) : question.get(false)
+);
+
+
+// convert map to array;
+console.log(...question);
+console.log(...question.entries());
+console.log(...question.keys());
+console.log(...question.values());
+*/
