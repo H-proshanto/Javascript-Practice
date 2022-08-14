@@ -26,7 +26,7 @@ const displayNumber = function (number) {
   document.querySelector('.number').textContent = number;
 };
 
-const setHighScore = function (score, highScore) {
+const setHighScore = function (score) {
   if (score > highScore) {
     highScore = score;
     document.querySelector('.highscore').textContent = highScore;
@@ -52,7 +52,7 @@ document.querySelector('.check').addEventListener('click', function () {
     displayMessage('🎉 Correct Number!');
     setBackGroundColor('#60b347');
     setNumberWidht('30rem');
-    setHighScore(score, highScore);
+    setHighScore(score);
   } else if (guess !== secrectNumber) {
     if (score > 1) {
       displayMessage(guess > secrectNumber ? '📈 Too High!' : '📉 Too Low!');
